@@ -1,9 +1,25 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Index{% endblock %}
+
+{% block stylesheets %}{% endblock %}
 
 {% block body %}
 
-    <h1>{{ slug }} </h1>
+    <h1>All articles from article s table : </h1>
+    {% for article in articles %}
+        <div>
+            <h2>{{ loop.index }} / {{ article.title }} - Category : {{ article.category.name }}</h2>
+            <p>{{ article.content }}</p>
+        </div>
+    {% endfor %}
+    <a href="{{ path('homepage') }}">
+        Back to homepage.
+    </a>
+    <br>
+    <a href="{{ path('blog_show', { 'slug': "javascript-vs-php" }) }}">
+        Testing show() method from BlogController with a real article s slug.
+    </a>
 
 {% endblock %}
 

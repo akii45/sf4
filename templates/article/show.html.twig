@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1>{{ article.title }}</h1>
+    <p>{{ article.content }}</p>
+
+    <h2>Tags associer:</h2>
+    {% for tag in article.tags %}
+        <li>{{ tag.name }} </li>
+    {% else %}
+        <li>No tags for this article</li>
+    {% endfor %}
+{% endblock %}

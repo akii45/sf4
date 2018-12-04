@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+     <h1>{{ tag.name }}</h1>
+    <h2>Associated Articles:</h2>
+    {% for article in tag.articles %}
+    <h3>{{ article.title }}</h3>
+    <p>{{ article.content }}</p>
+    {% endfor %}
+{% endblock %}

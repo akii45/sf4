@@ -15,5 +15,13 @@
     <a href="{{ path('blog_index') }}">
         See all articles
     </a>
+    <strong>Tags :</strong>
+    <ul>
+        {% for tag in tags %}
+            <li>{{ tag.name }} </li>
+        {% else %}
+            <li>No tags for this article</li>
+        {% endfor %}
+    </ul>
 
 {% endblock %}

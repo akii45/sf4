@@ -3,10 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome WCS!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}<link rel="stylesheet" href="../public/build/app.css">
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
     </head>
     <body>
+    {% block header %}{% include 'navbar.html.twig' %}{% endblock %}
+
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
     </body>
 </html>
